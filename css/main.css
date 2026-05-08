@@ -1114,7 +1114,9 @@
     .nav-links, .nav-cta { display: none; }
     .nav-mobile-toggle { display: block; }
     #hero {
-      padding: 112px 24px 72px;
+      justify-content: flex-start;
+      padding: 88px 24px 80px;
+      padding-top: max(88px, env(safe-area-inset-top, 0px) + 72px);
       min-height: 100vh;
       min-height: 100dvh;
     }
