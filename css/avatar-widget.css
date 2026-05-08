@@ -50,16 +50,24 @@ body.avatar-demo-page {
   right: 18px;
   bottom: 18px;
   z-index: 980;
-  border: 1px solid rgba(76, 149, 255, 0.55);
-  background: linear-gradient(135deg, #1a2e50, #2f80ff);
-  color: #eef4ff;
+  border: 1px solid rgba(201, 169, 110, 0.42);
+  background: linear-gradient(
+    145deg,
+    #1a0a0d 0%,
+    #2d0f14 35%,
+    #4a151c 70%,
+    #5c1a24 100%
+  );
+  color: #f5f0ea;
   border-radius: 999px;
   padding: 11px 16px;
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .avatar-widget-overlay.open + .avatar-fab,
