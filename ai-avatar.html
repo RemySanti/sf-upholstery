@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Avatar Agent Widget Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/avatar-widget.css">
+</head>
+<body class="avatar-demo-page">
+  <div class="avatar-demo-wrap">
+    <button id="openAvatarWidget" class="avatar-launch">Launch AI Avatar Agent</button>
+  </div>
+
+  <div id="avatarWidgetOverlay" class="avatar-widget-overlay">
+    <section class="avatar-widget" role="dialog" aria-modal="true" aria-label="AI Avatar Agent">
+      <header class="avatar-head">
+        <div class="avatar-id">
+          <div class="avatar-badge">AI</div>
+          <div class="avatar-meta">
+            <div class="avatar-name">Lamar's Ai Avatar</div>
+            <div class="avatar-status"><span class="status-dot"></span><span id="avatarStatusText">Online</span></div>
+          </div>
+        </div>
+        <div class="avatar-controls">
+          <button id="avatarMinBtn" aria-label="Minimize">-</button>
+          <button id="avatarCloseBtn" aria-label="Close">x</button>
+        </div>
+      </header>
+
+      <div class="avatar-stage">
+        <video id="avatarVideo" autoplay muted playsinline poster="assets/ai-avatar.png"></video>
+        <div id="avatarFacePulse" class="avatar-face-pulse"></div>
+      </div>
+
+      <div class="avatar-warning">
+        <strong>!</strong> This AI can improvise. Review important decisions before acting.
+      </div>
+
+      <div class="avatar-interact">
+        <div class="avatar-step">Step 1: Enable your microphone or camera</div>
+        <div class="avatar-actions">
+          <button id="avatarMicBtn" class="avatar-btn">Enable Mic</button>
+          <button id="avatarCamBtn" class="avatar-btn">Enable Cam</button>
+        </div>
+      </div>
+
+      <div class="avatar-chat">
+        <div id="avatarMessages" class="avatar-messages"></div>
+        <div class="avatar-input-row">
+          <input id="avatarInput" class="avatar-input" type="text" placeholder="Type a message to your AI avatar...">
+          <button id="avatarSend" class="avatar-send">Send</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/avatar-agent.js"></script>
+</body>
+</html>
