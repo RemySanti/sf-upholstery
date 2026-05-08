@@ -1113,48 +1113,7 @@
     nav.scrolled { padding: 16px 30px; }
     .nav-links, .nav-cta { display: none; }
     .nav-mobile-toggle { display: block; }
-    #hero {
-      justify-content: flex-start;
-      padding: 88px 24px 80px;
-      padding-top: max(88px, env(safe-area-inset-top, 0px) + 72px);
-      min-height: 100vh;
-      min-height: 100dvh;
-    }
-    .hero-tag {
-      margin-bottom: 40px;
-      font-size: 9px;
-      letter-spacing: 0.26em;
-      line-height: 1.65;
-      max-width: min(100%, 22em);
-    }
-    .hero-h1 {
-      font-size: clamp(44px, 12.4vw, 78px);
-      line-height: 0.94;
-      max-width: 100%;
-    }
-    .hero-h1 em {
-      font-size: 0.78em;
-    }
-    .hero-sub {
-      margin-top: 28px;
-      font-size: 14px;
-      line-height: 1.65;
-      max-width: 100%;
-    }
-    .hero-actions {
-      margin-top: 36px;
-    }
-    .hero-line {
-      right: 16px;
-      opacity: 0.85;
-    }
-    .hero-year {
-      display: none;
-    }
-    .hero-scroll-hint {
-      bottom: 28px;
-      right: 24px;
-    }
+    #hero { padding: 0 30px 80px; }
     #philosophy { grid-template-columns: 1fr; padding: 100px 30px; gap: 60px; }
     #materials { padding: 100px 0; }
     .materials-header { padding: 0 30px; flex-direction: column; gap: 20px; align-items: flex-start; }
