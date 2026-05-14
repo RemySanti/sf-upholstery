@@ -1,0 +1,534 @@
+/*
+  VISION THEME — Cinematic Overlay
+  Deep purples · Emerald greens · Dark blues · Warm gold
+  Applied sitewide to match the Client Vision Brand Direction
+*/
+
+/* ─── EXTENDED PALETTE VARIABLES ─────────────────────────────── */
+:root {
+  --purple:      #8040d0;
+  --purple-dim:  rgba(128, 64, 208, 0.18);
+  --purple-glow: rgba(128, 64, 208, 0.06);
+  --purple-line: rgba(128, 64, 208, 0.22);
+  --emerald:     #1ab87a;
+  --emerald-dim: rgba(26, 184, 122, 0.15);
+  --emerald-glow:rgba(26, 184, 122, 0.05);
+  --emerald-line:rgba(26, 184, 122, 0.2);
+  --navy:        #2060c8;
+  --navy-dim:    rgba(32, 96, 200, 0.15);
+  --surface:     #100d18;   /* override warm-surface with cool cinematic dark */
+  --graphite:    #0c0c14;   /* override graphite with deep cool dark */
+  --charcoal:    #14121e;   /* override charcoal */
+}
+
+/* ─── BODY / BASE ─────────────────────────────────────────────── */
+body {
+  background: #050508;
+}
+
+/* ─── NAVIGATION ──────────────────────────────────────────────── */
+nav {
+  background: rgba(12, 4, 32, 0.72);
+  backdrop-filter: blur(32px) saturate(1.8);
+  -webkit-backdrop-filter: blur(32px) saturate(1.8);
+  border-bottom: 1px solid rgba(160, 100, 255, 0.15);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.4), inset 0 -1px 0 rgba(88,28,180,0.1);
+}
+nav.scrolled {
+  background: rgba(10, 3, 26, 0.92);
+  border-bottom: 1px solid rgba(160, 100, 255, 0.2);
+}
+.nav-links a::after {
+  background: linear-gradient(90deg, rgba(128, 64, 208, 0.8), rgba(26, 184, 122, 0.6));
+}
+.nav-logo span { color: var(--purple); }
+
+/* ─── HERO (INDEX) ────────────────────────────────────────────── */
+/* hero-bg is intentionally not overridden here — the video plays clean */
+.hero-line {
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(128, 64, 208, 0.18) 25%,
+    rgba(26, 184, 122, 0.12) 60%,
+    transparent 100%
+  );
+}
+.hero-tag { color: rgba(160, 100, 220, 0.9); }
+.hero-h1 em { color: rgba(160, 100, 220, 0.9); }
+.scroll-line {
+  background: linear-gradient(to bottom, var(--purple), transparent);
+}
+
+/* ─── MARQUEE ─────────────────────────────────────────────────── */
+.marquee-track {
+  background: #0a0812;
+  border-top: 1px solid rgba(128, 64, 208, 0.1);
+  border-bottom: 1px solid rgba(26, 184, 122, 0.08);
+}
+.marquee-item { color: rgba(255, 255, 255, 0.25); }
+.marquee-item::after {
+  content: '✦';
+  color: var(--purple);
+  opacity: 0.7;
+}
+
+/* ─── EDITORIAL DIVIDERS ──────────────────────────────────────── */
+.editorial-divider .line {
+  background: linear-gradient(90deg, transparent, rgba(128, 64, 208, 0.18), transparent);
+}
+.editorial-divider .label {
+  color: rgba(128, 64, 208, 0.55);
+}
+
+/* ─── PHILOSOPHY SECTION ──────────────────────────────────────── */
+#philosophy {
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(60, 15, 100, 0.2) 0%, transparent 55%),
+    #050508;
+}
+.phil-h2 em { color: rgba(160, 100, 220, 0.9); }
+.phil-image-box::before {
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(90, 30, 160, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(26, 184, 122, 0.12) 0%, transparent 55%),
+    linear-gradient(135deg, rgba(30, 10, 60, 0.15) 0%, transparent 70%);
+}
+.phil-leather-texture {
+  background:
+    repeating-linear-gradient(45deg, rgba(128, 64, 208, 0.025) 0px, rgba(128, 64, 208, 0.025) 1px, transparent 1px, transparent 8px),
+    repeating-linear-gradient(-45deg, rgba(26, 184, 122, 0.015) 0px, rgba(26, 184, 122, 0.015) 1px, transparent 1px, transparent 8px),
+    linear-gradient(170deg, #16102a 0%, #0e0c1a 50%, #080610 100%);
+}
+.stitch-dot { background: rgba(128, 64, 208, 0.4); }
+.texture-label { color: rgba(128, 64, 208, 0.45); }
+.phil-offset-box {
+  background: #0c0a16;
+  border: 1px solid rgba(128, 64, 208, 0.15);
+}
+.phil-offset-num { color: var(--purple); }
+.section-num { color: rgba(128, 64, 208, 0.7); }
+
+/* ─── MATERIALS SECTION ───────────────────────────────────────── */
+#materials {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(15, 5, 30, 0.8) 0%, transparent 60%),
+    #0a0812;
+}
+.material-bg-leather {
+  background:
+    repeating-linear-gradient(30deg, rgba(128, 64, 208, 0.05) 0, rgba(128, 64, 208, 0.05) 1px, transparent 1px, transparent 12px),
+    linear-gradient(135deg, #1e1030 0%, #100820 60%, #0a0515 100%);
+}
+.material-bg-velvet {
+  background:
+    repeating-linear-gradient(60deg, rgba(26, 184, 122, 0.06) 0, rgba(26, 184, 122, 0.06) 1px, transparent 1px, transparent 8px),
+    radial-gradient(ellipse at 40% 60%, rgba(26, 184, 122, 0.12) 0%, transparent 55%),
+    linear-gradient(135deg, #071a12 0%, #040e0a 100%);
+}
+.material-bg-linen {
+  background:
+    repeating-linear-gradient(0deg, rgba(200, 190, 220, 0.04) 0, rgba(200, 190, 220, 0.04) 1px, transparent 1px, transparent 6px),
+    radial-gradient(ellipse at 60% 40%, rgba(32, 96, 200, 0.1) 0%, transparent 55%),
+    linear-gradient(135deg, #0d0e1e 0%, #080910 100%);
+}
+.material-bg-suede {
+  background:
+    radial-gradient(ellipse at 40% 60%, rgba(128, 64, 208, 0.12) 0, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(26, 184, 122, 0.08) 0%, transparent 50%),
+    linear-gradient(135deg, #130a22 0%, #0a0615 100%);
+}
+.material-num { color: rgba(128, 64, 208, 0.45); }
+.material-origin { color: var(--emerald); }
+
+/* ─── PROCESS SECTION ─────────────────────────────────────────── */
+#process {
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(15, 5, 30, 0.6) 0%, transparent 50%),
+    #050508;
+}
+.process-steps::before {
+  background: linear-gradient(to right,
+    transparent,
+    rgba(128, 64, 208, 0.25),
+    rgba(26, 184, 122, 0.3),
+    rgba(32, 96, 200, 0.25),
+    transparent
+  );
+}
+.step-circle {
+  background: #0c0a16;
+  border: 1px solid rgba(128, 64, 208, 0.2);
+}
+.process-step:hover .step-circle {
+  border-color: var(--purple);
+  background: rgba(128, 64, 208, 0.08);
+  box-shadow: 0 0 24px rgba(128, 64, 208, 0.15);
+}
+.step-num { color: var(--purple); }
+.step-icon-text { color: var(--emerald) !important; }
+.process-h2 em {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  color: rgba(26, 184, 122, 0.9);
+}
+
+/* ─── METRICS SECTION ─────────────────────────────────────────── */
+#metrics {
+  background:
+    radial-gradient(ellipse at 70% 50%, rgba(10, 4, 24, 0.9) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 30%, rgba(5, 15, 25, 0.7) 0%, transparent 55%),
+    #0c0a16;
+  border-top: 1px solid rgba(128, 64, 208, 0.1);
+  border-bottom: 1px solid rgba(26, 184, 122, 0.1);
+}
+.metrics-grid { background: rgba(128, 64, 208, 0.06); }
+.metric-cell { background: #0c0a16; }
+.metric-cell:hover { background: rgba(128, 64, 208, 0.06); }
+.metric-cell::before { background: var(--purple); }
+.metric-num { color: var(--purple); }
+/* Second and fourth cells get emerald/navy accent */
+.metric-cell:nth-child(2)::before { background: var(--emerald); }
+.metric-cell:nth-child(2) .metric-num { color: var(--emerald); }
+.metric-cell:nth-child(4)::before { background: var(--navy); }
+.metric-cell:nth-child(4) .metric-num { color: rgba(100, 160, 240, 0.9); }
+
+/* ─── PROJECTS SECTION ────────────────────────────────────────── */
+#projects {
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(60, 15, 100, 0.15) 0%, transparent 50%),
+    #050508;
+}
+.projects-h2 em { color: rgba(160, 100, 220, 0.9); }
+.project-bg-1 {
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(80, 20, 150, 0.35) 0%, transparent 60%),
+    linear-gradient(160deg, #1a0a30 0%, #0a0518 100%);
+}
+.project-bg-2 {
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(10, 70, 45, 0.4) 0%, transparent 60%),
+    linear-gradient(160deg, #071a10 0%, #030a08 100%);
+}
+.project-bg-3 {
+  background:
+    radial-gradient(ellipse at 60% 50%, rgba(15, 40, 110, 0.35) 0%, transparent 60%),
+    linear-gradient(160deg, #070d20 0%, #040810 100%);
+}
+.project-bg-4 {
+  background:
+    radial-gradient(ellipse at 40% 40%, rgba(100, 50, 180, 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse at 70% 70%, rgba(20, 110, 75, 0.2) 0%, transparent 50%),
+    linear-gradient(160deg, #12081e 0%, #080512 100%);
+}
+.project-cat { color: rgba(160, 100, 220, 0.85); }
+.project-arrow {
+  border: 1px solid rgba(128, 64, 208, 0.3);
+  color: var(--purple);
+}
+
+/* ─── WORKSHOP SECTION ────────────────────────────────────────── */
+#workshop {
+  background:
+    radial-gradient(ellipse at 10% 80%, rgba(10, 4, 24, 0.9) 0%, transparent 55%),
+    #0c0a16;
+}
+.workshop-main-box { background: #0e0c1c; }
+.workshop-pattern {
+  background:
+    repeating-conic-gradient(rgba(128, 64, 208, 0.03) 0deg, rgba(128, 64, 208, 0.03) 90deg, transparent 90deg, transparent 180deg) 0 0 / 24px 24px,
+    radial-gradient(ellipse at 50% 50%, rgba(128, 64, 208, 0.06) 0%, transparent 70%),
+    linear-gradient(135deg, #14102a 0%, #0c0a1e 100%);
+}
+.workshop-center-text { color: rgba(128, 64, 208, 0.06); }
+.workshop-badge {
+  background: linear-gradient(135deg, var(--purple) 0%, #5020a0 100%);
+}
+.workshop-h2 em { color: rgba(160, 100, 220, 0.9); }
+.workshop-tag { color: var(--emerald); }
+.quality-dot { background: var(--purple); }
+.quality-item:hover .quality-dot { background: var(--emerald); }
+
+/* ─── CTA SECTION ─────────────────────────────────────────────── */
+#cta {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(60, 15, 100, 0.2) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 100%, rgba(10, 60, 40, 0.12) 0%, transparent 45%),
+    #050508;
+}
+.cta-bg-glow {
+  width: 800px; height: 400px;
+  background: radial-gradient(ellipse,
+    rgba(128, 64, 208, 0.08) 0%,
+    rgba(26, 184, 122, 0.04) 40%,
+    transparent 70%
+  );
+}
+.cta-h2 em { color: rgba(160, 100, 220, 0.9); }
+.cta-tag { color: rgba(160, 100, 220, 0.8); }
+.btn-large {
+  background: linear-gradient(135deg, rgba(100,36,200,0.9) 0%, rgba(65,16,150,0.85) 100%);
+  color: #fff;
+  border: 1px solid rgba(160,100,255,0.35);
+  box-shadow: 0 8px 32px rgba(88,28,180,0.4), inset 0 1px 0 rgba(200,160,255,0.2);
+  border-radius: 12px;
+}
+.btn-large:hover {
+  background: linear-gradient(135deg, rgba(120,50,220,1) 0%, rgba(85,20,180,1) 100%);
+  color: #fff;
+  box-shadow: 0 16px 48px rgba(88,28,180,0.55), inset 0 1px 0 rgba(220,180,255,0.25);
+  transform: translateY(-2px);
+}
+.btn-outline-large {
+  border: 1px solid rgba(160, 100, 255, 0.35);
+  color: rgba(200, 160, 255, 0.85);
+  background: rgba(88, 28, 180, 0.12);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 0 rgba(200,160,255,0.1);
+}
+.btn-outline-large:hover {
+  border-color: rgba(160, 100, 255, 0.65);
+  color: rgba(220, 190, 255, 1);
+  background: rgba(88, 28, 180, 0.25);
+  box-shadow: 0 8px 32px rgba(88,28,180,0.3), inset 0 1px 0 rgba(200,160,255,0.18);
+}
+.btn-primary {
+  background: linear-gradient(135deg, rgba(100,36,200,0.9) 0%, rgba(65,16,150,0.85) 100%);
+  color: #fff;
+  border: 1px solid rgba(160,100,255,0.35);
+  box-shadow: 0 6px 24px rgba(88,28,180,0.4), inset 0 1px 0 rgba(200,160,255,0.18);
+  border-radius: 10px;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, rgba(120,50,220,1) 0%, rgba(85,20,180,1) 100%);
+  color: #fff;
+  box-shadow: 0 12px 36px rgba(88,28,180,0.5);
+  transform: translateY(-2px);
+}
+
+/* ─── FOOTER ──────────────────────────────────────────────────── */
+footer {
+  background:
+    linear-gradient(135deg,
+      rgba(88, 28, 180, 0.28) 0%,
+      rgba(50, 12, 110, 0.18) 50%,
+      rgba(10, 5, 28, 0.95) 100%);
+  backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(160, 100, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(200, 160, 255, 0.08);
+}
+.footer-bottom {
+  border-top: 1px solid rgba(128, 64, 208, 0.08);
+}
+.footer-logo span { color: var(--purple); }
+.footer-col-title { color: var(--emerald); }
+.footer-title-icon { border: 1px solid rgba(26, 184, 122, 0.45); }
+.footer-title-icon::after { background: var(--emerald); }
+.footer-social a:hover { color: var(--purple); }
+.footer-links a:hover { color: rgba(160, 100, 220, 0.9); }
+
+/* ─── INTERIOR PAGE HEROES ────────────────────────────────────── */
+.page-hero {
+  background:
+    radial-gradient(ellipse at 70% 25%, rgba(88, 28, 180, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 80%, rgba(10, 120, 65, 0.30) 0%, transparent 50%),
+    linear-gradient(160deg, #0c0418 0%, #050508 100%);
+}
+.page-hero .hero-bg {
+  background:
+    radial-gradient(ellipse at 65% 25%, rgba(88, 28, 180, 0.45) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 75%, rgba(10, 120, 65, 0.22) 0%, transparent 50%),
+    linear-gradient(to top, rgba(5, 4, 14, 0.9) 0%, rgba(5, 4, 14, 0.3) 60%, rgba(5, 4, 14, 0.12) 100%);
+}
+.page-hero .hero-line {
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(128, 64, 208, 0.18) 30%,
+    rgba(26, 184, 122, 0.1) 65%,
+    transparent 100%
+  );
+}
+.page-hero .hero-h1 em {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  color: rgba(160, 100, 220, 0.9);
+}
+.page-hero .hero-tag { color: rgba(160, 100, 220, 0.85); }
+
+/* ─── SECTION KICKER & TITLES (interior pages) ────────────────── */
+.section-kicker { color: var(--emerald); }
+.section-title-page em { color: rgba(160, 100, 220, 0.9); }
+
+/* ─── SERVICE CARDS ───────────────────────────────────────────── */
+.service-cards {
+  background: rgba(128, 64, 208, 0.06);
+}
+.service-card { background: #07060e; }
+.service-card:hover { background: rgba(128, 64, 208, 0.06); }
+.service-card-num { color: rgba(128, 64, 208, 0.5); }
+/* Alternate emerald for even cards */
+.service-card:nth-child(even) .service-card-num { color: rgba(26, 184, 122, 0.5); }
+.service-card:nth-child(even):hover { background: rgba(26, 184, 122, 0.04); }
+.service-card a { color: var(--purple); border-bottom: 1px solid rgba(128, 64, 208, 0.3); }
+.service-card a:hover { color: rgba(160, 100, 220, 1); border-bottom-color: rgba(160, 100, 220, 0.6); }
+
+/* ─── SPEC LIST ───────────────────────────────────────────────── */
+.spec-list li::before { background: var(--purple); }
+
+/* ─── STAT ROW ────────────────────────────────────────────────── */
+.stat-row { border-top: 1px solid rgba(128, 64, 208, 0.14); }
+.stat-row .stat-val { color: var(--purple); }
+.stat-row .stat-val:nth-child(odd) { color: var(--emerald); }
+
+/* ─── MATERIAL TIER CARDS ─────────────────────────────────────── */
+.material-tier {
+  border: 1px solid rgba(128, 64, 208, 0.14);
+  background: rgba(10, 8, 20, 0.7);
+}
+.material-tier h4 { color: var(--emerald); }
+.material-tier:nth-child(2) h4 { color: var(--purple); }
+.material-tier:nth-child(3) h4 { color: rgba(80, 140, 220, 0.85); }
+a.material-tier:hover {
+  background: rgba(128, 64, 208, 0.07);
+  border-color: rgba(128, 64, 208, 0.3);
+  box-shadow: 0 4px 20px rgba(128, 64, 208, 0.1);
+}
+
+/* ─── TIMELINE ────────────────────────────────────────────────── */
+.timeline-deep {
+  border-left: 1px solid rgba(128, 64, 208, 0.25);
+}
+.timeline-deep-item::before {
+  background: var(--purple);
+  box-shadow: 0 0 0 4px rgba(128, 64, 208, 0.18);
+}
+
+/* ─── PROJECT ROWS (work page) ────────────────────────────────── */
+.project-row { background: #0d0b1a; }
+.project-row:nth-child(even) { background: #0a0812; }
+
+/* ─── CONTACT BLOCKS ──────────────────────────────────────────── */
+.contact-block {
+  border: 1px solid rgba(128, 64, 208, 0.18);
+  background: rgba(5, 5, 12, 0.6);
+}
+.contact-block h3 { color: var(--emerald); }
+.contact-block:hover {
+  border-color: rgba(128, 64, 208, 0.32);
+  background: rgba(128, 64, 208, 0.04);
+}
+
+/* ─── STUDIO SIDEBAR ──────────────────────────────────────────── */
+.studio-sidebar-kicker { color: rgba(128, 64, 208, 0.8); }
+.studio-sidebar-dot { background: var(--purple); }
+.studio-sidebar {
+  border-left: 1px solid rgba(128, 64, 208, 0.18);
+  border-right: 1px solid rgba(128, 64, 208, 0.1);
+  background: linear-gradient(180deg, rgba(10, 8, 20, 0.95) 0%, rgba(8, 6, 16, 0.75) 100%);
+}
+.studio-sidebar-link.is-current { color: rgba(160, 100, 220, 0.95); }
+.studio-sidebar-link:hover { color: rgba(160, 100, 220, 0.7); }
+
+/* ─── PAGE SECTION BORDERS ────────────────────────────────────── */
+.page-section {
+  border-top: 1px solid rgba(128, 64, 208, 0.07);
+}
+.page-section--surface { background: #0d0b1a; }
+.page-section--graphite { background: #0a0812; }
+
+/* ─── MOBILE DRAWER ───────────────────────────────────────────── */
+.mobile-menu-drawer {
+  background:
+    linear-gradient(160deg,
+      rgba(88, 28, 180, 0.65) 0%,
+      rgba(50, 12, 130, 0.55) 50%,
+      rgba(10, 4, 30, 0.95) 100%);
+  backdrop-filter: blur(32px) saturate(1.8);
+  -webkit-backdrop-filter: blur(32px) saturate(1.8);
+  border-left: 1px solid rgba(160, 100, 255, 0.25);
+  box-shadow: -24px 0 80px rgba(0,0,0,0.6), inset 1px 0 0 rgba(200,160,255,0.1);
+}
+.mobile-nav-cta {
+  border: 1px solid rgba(128, 64, 208, 0.5);
+  color: var(--purple);
+}
+
+/* ─── FOCUS / ACCESSIBILITY ───────────────────────────────────── */
+a:focus-visible,
+button:focus-visible,
+.nav-mobile-toggle:focus-visible {
+  outline: 1px solid rgba(128, 64, 208, 0.85);
+}
+
+/* ─── CINEMATIC AMBIENT GLOW — section borders ────────────────── */
+#philosophy::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(128, 64, 208, 0.3), rgba(26, 184, 122, 0.2), transparent);
+  pointer-events: none;
+}
+#materials::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(26, 184, 122, 0.25), rgba(128, 64, 208, 0.2), transparent);
+  pointer-events: none;
+}
+#cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(128, 64, 208, 0.35), transparent);
+  pointer-events: none;
+}
+
+/* ─── CINEMATIC HIGHLIGHT BAR on hover (cards) ────────────────── */
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--emerald));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease);
+  z-index: 5;
+}
+.project-card:hover::after { transform: scaleX(1); }
+
+.material-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--emerald));
+  z-index: 5;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease);
+}
+.material-card:hover::before { transform: scaleX(1); }
+
+/* ─── NAV CTA button ──────────────────────────────────────────── */
+.nav-cta {
+  color: rgba(160, 100, 220, 0.9);
+  border: 1px solid rgba(128, 64, 208, 0.4);
+}
+.nav-cta:hover {
+  background: var(--purple);
+  color: #fff;
+  border-color: var(--purple);
+  box-shadow: 0 4px 20px rgba(128, 64, 208, 0.3);
+}
+
+/* ─── PROCESS SECTION accent line color ───────────────────────── */
+.process-intro { color: rgba(255, 255, 255, 0.45); }
+.process-h2 { color: var(--warm-white); }
+
+/* ─── WORKSHOP badge label color ─────────────────────────────────*/
+.badge-text { color: rgba(255, 255, 255, 0.9); }
+.badge-year { color: #fff; }

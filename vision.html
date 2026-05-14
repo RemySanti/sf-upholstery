@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Vision — Cinematic Brand Direction | San Francisco Upholstery Group</title>
+<meta name="description" content="A cinematic production brief for SF Upholstery Group — luxury positioning, commercial environment scenes, brand aesthetic, and deliverables.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/avatar-widget.css">
+<link rel="stylesheet" href="css/vision-theme.css">
+<link rel="stylesheet" href="css/bento-glass.css">
+<link rel="stylesheet" href="css/spacing-fix.css">
+<style>
+  /* VISION PAGE — BESPOKE STYLES */
+
+  /* Cinematic hero overlay */
+  .vision-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 160px 60px 80px;
+    overflow: hidden;
+  }
+  .vision-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 40%, rgba(80,20,120,0.55) 0%, transparent 55%),
+                radial-gradient(ellipse at 20% 80%, rgba(10,80,60,0.4) 0%, transparent 50%),
+                linear-gradient(180deg, #050505 0%, rgba(5,5,5,0.4) 60%, #050505 100%);
+    z-index: 1;
+  }
+  .vision-hero .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #0a0014 0%, #060d10 40%, #050505 100%);
+    z-index: 0;
+  }
+  .vision-hero .hero-noise {
+    position: absolute; inset: 0; z-index: 2;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  .vision-hero-content { position: relative; z-index: 3; }
+  .vision-hero .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(160,100,220,0.85);
+    margin-bottom: 18px;
+  }
+  .vision-hero .hero-h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(60px, 10vw, 140px);
+    line-height: 0.9;
+    letter-spacing: 0.03em;
+    color: var(--warm-white);
+    margin-bottom: 24px;
+  }
+  .vision-hero .hero-h1 em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(160,100,220,0.7);
+  }
+  .vision-hero .hero-sub {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--soft-gray);
+    max-width: 520px;
+    margin-bottom: 0;
+  }
+  .vision-hero-year {
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.12);
+    transform: rotate(90deg) translateX(-50%);
+    z-index: 3;
+  }
+  .vision-hero-line {
+    position: absolute;
+    right: 200px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(160,100,220,0.2) 40%, rgba(20,140,100,0.2) 70%, transparent);
+    z-index: 3;
+  }
+  .vision-hero-badge {
+    position: absolute;
+    top: 160px;
+    right: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    z-index: 3;
+  }
+  .vision-hero-badge-ring {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    border: 1px solid rgba(160,100,220,0.3);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .vision-hero-badge-ring::before {
+    content: 'LUXURY · COMMERCIAL · CINEMATIC ·';
+    position: absolute;
+    width: 100%; height: 100%;
+    font-family: 'DM Mono', monospace;
+    font-size: 6px;
+    letter-spacing: 0.18em;
+    color: rgba(160,100,220,0.5);
+    top: 0; left: 0;
+    display: flex; align-items: center; justify-content: center;
+    animation: rotateText 18s linear infinite;
+  }
+  @keyframes rotateText {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .vision-hero-badge-inner {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: rgba(160,100,220,0.7);
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  /* VISION LAYOUT */
+  .vision-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px 140px;
+  }
+
+  /* SECTION HEADER */
+  .vision-section {
+    padding: 90px 0;
+    border-top: 1px solid rgba(201,169,110,0.08);
+  }
+  .vision-section:first-of-type {
+    border-top: none;
+    padding-top: 60px;
+  }
+  .vision-section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 14px;
+  }
+  .vision-section-h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 68px);
+    line-height: 0.95;
+    letter-spacing: 0.03em;
+    color: var(--warm-white);
+    margin-bottom: 28px;
+  }
+  .vision-section-h2 em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--gold);
+  }
+  .vision-section-h2.purple em { color: rgba(160,100,220,0.9); }
+  .vision-section-h2.emerald em { color: rgba(30,180,120,0.9); }
+  .vision-section-h2.blue em { color: rgba(60,140,220,0.9); }
+  .vision-prose {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--soft-gray);
+    max-width: 640px;
+    margin-bottom: 0;
+  }
+
+  /* OBJECTIVE CARDS */
+  .objective-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+  .objective-card {
+    background: var(--graphite);
+    padding: 32px 28px;
+    border: 1px solid rgba(255,255,255,0.04);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
+  }
+  .objective-card:hover {
+    background: #120020;
+    border-color: rgba(160,100,220,0.2);
+  }
+  .objective-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(160,100,220,0.6), transparent);
+    opacity: 0;
+    transition: opacity 0.3s var(--ease);
+  }
+  .objective-card:hover::before { opacity: 1; }
+  .objective-card-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: rgba(160,100,220,0.6);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .objective-card-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--warm-white);
+    margin-bottom: 10px;
+  }
+  .objective-card-body {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--soft-gray);
+  }
+
+  /* AESTHETIC PALETTE */
+  .palette-row {
+    display: flex;
+    gap: 2px;
+    margin-top: 40px;
+    margin-bottom: 32px;
+  }
+  .palette-swatch {
+    flex: 1;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 12px 14px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: flex 0.4s var(--ease);
+  }
+  .palette-swatch:hover { flex: 1.6; }
+  .swatch-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    position: relative; z-index: 1;
+  }
+  .swatch-name {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.9);
+    position: relative; z-index: 1;
+    margin-top: 3px;
+  }
+  .swatch-purple { background: linear-gradient(135deg, #2a0845 0%, #4a1580 100%); }
+  .swatch-emerald { background: linear-gradient(135deg, #033d2a 0%, #0a7a52 100%); }
+  .swatch-navy { background: linear-gradient(135deg, #050d2a 0%, #0f2560 100%); }
+  .swatch-black { background: linear-gradient(135deg, #050505 0%, #1a1a1a 100%); }
+  .swatch-gold { background: linear-gradient(135deg, #5a3a10 0%, #c9a96e 100%); }
+
+  .style-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+  }
+  .style-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--soft-gray);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 14px;
+    transition: all 0.25s var(--ease);
+  }
+  .style-tag:hover {
+    border-color: rgba(160,100,220,0.4);
+    color: rgba(160,100,220,0.85);
+    background: rgba(160,100,220,0.05);
+  }
+  .style-tag.emerald:hover {
+    border-color: rgba(30,180,120,0.4);
+    color: rgba(30,180,120,0.85);
+    background: rgba(30,180,120,0.05);
+  }
+  .style-tag.gold:hover {
+    border-color: rgba(201,169,110,0.5);
+    color: var(--gold);
+    background: rgba(201,169,110,0.05);
+  }
+
+  /* ENVIRONMENT CARDS */
+  .env-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+  .env-card {
+    position: relative;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px;
+    overflow: hidden;
+    cursor: default;
+  }
+  .env-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    z-index: 0;
+    transition: transform 0.6s var(--ease);
+  }
+  .env-card:hover::before { transform: scale(1.04); }
+  .env-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(0deg, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.3) 60%, transparent 100%);
+    z-index: 1;
+  }
+  .env-restaurant::before { background: radial-gradient(ellipse at center bottom, #1a0830 0%, #050505 100%); }
+  .env-bar::before { background: radial-gradient(ellipse at center bottom, #0a0a30 0%, rgba(60,10,80,0.8) 40%, #050505 100%); }
+  .env-hotel::before { background: radial-gradient(ellipse at center bottom, #081a14 0%, #050505 100%); }
+  .env-card-body { position: relative; z-index: 2; }
+  .env-card-letter {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 100px;
+    line-height: 1;
+    color: rgba(255,255,255,0.04);
+    position: absolute;
+    top: 20px; right: 24px;
+    z-index: 2;
+    letter-spacing: 0;
+  }
+  .env-card-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .env-restaurant .env-card-tag { color: rgba(201,169,110,0.8); }
+  .env-bar .env-card-tag { color: rgba(160,100,220,0.8); }
+  .env-hotel .env-card-tag { color: rgba(30,180,120,0.8); }
+  .env-card-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-style: italic;
+    color: var(--warm-white);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .env-card-desc {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 20px;
+  }
+  .env-shot-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .env-shot-list li {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.35);
+    padding-left: 14px;
+    position: relative;
+    text-transform: uppercase;
+  }
+  .env-shot-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: rgba(255,255,255,0.18);
+  }
+
+  /* THEATER SECTION */
+  .theater-block {
+    margin-top: 48px;
+    position: relative;
+    background: linear-gradient(135deg, #080010 0%, #100018 50%, #050505 100%);
+    border: 1px solid rgba(160,100,220,0.1);
+    overflow: hidden;
+    padding: 72px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .theater-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(100,40,160,0.2) 0%, transparent 60%);
+  }
+  .theater-visual {
+    position: relative;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .theater-curtain-left,
+  .theater-curtain-right {
+    position: absolute;
+    top: 0;
+    width: 42%;
+    height: 100%;
+    background: linear-gradient(90deg, #1a0050 0%, #2d0080 40%, rgba(45,0,80,0.6) 100%);
+  }
+  .theater-curtain-left {
+    left: 0;
+    background: linear-gradient(90deg, #2d0080 0%, rgba(45,0,80,0.4) 100%);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  }
+  .theater-curtain-right {
+    right: 0;
+    background: linear-gradient(270deg, #2d0080 0%, rgba(45,0,80,0.4) 100%);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .theater-spotlight {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px; height: 180px;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,169,110,0.2) 0%, transparent 70%);
+    z-index: 2;
+  }
+  .theater-stage-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    color: rgba(201,169,110,0.4);
+    position: relative;
+    z-index: 3;
+  }
+  .theater-info { position: relative; z-index: 1; }
+  .theater-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(160,100,220,0.8);
+    display: block;
+    margin-bottom: 16px;
+  }
+  .theater-h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    line-height: 0.95;
+    letter-spacing: 0.04em;
+    color: var(--warm-white);
+    margin-bottom: 20px;
+  }
+  .theater-h3 em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: rgba(160,100,220,0.85);
+  }
+  .theater-body {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--soft-gray);
+    margin-bottom: 24px;
+  }
+  .shot-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .shot-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(160,100,220,0.7);
+    border: 1px solid rgba(160,100,220,0.2);
+    padding: 6px 12px;
+  }
+
+  /* TECHNICAL SECTION */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 48px;
+  }
+  .tech-cell {
+    background: var(--graphite);
+    padding: 40px 36px;
+    border: 1px solid rgba(255,255,255,0.04);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s var(--ease);
+  }
+  .tech-cell:hover { background: #0a0018; }
+  .tech-cell::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(30,180,120,0.6), transparent);
+    opacity: 0;
+    transition: opacity 0.3s var(--ease);
+  }
+  .tech-cell:hover::before { opacity: 1; }
+  .tech-icon {
+    width: 44px; height: 44px;
+    border: 1px solid rgba(30,180,120,0.25);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: rgba(30,180,120,0.6);
+  }
+  .tech-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--warm-white);
+    margin-bottom: 10px;
+  }
+  .tech-body {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--soft-gray);
+  }
+
+  /* GREECE SECTION */
+  .greece-block {
+    margin-top: 48px;
+    background: linear-gradient(135deg, #050d10 0%, #040a0a 100%);
+    border: 1px solid rgba(30,180,120,0.12);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    overflow: hidden;
+  }
+  .greece-visual {
+    position: relative;
+    min-height: 440px;
+    background: linear-gradient(160deg, #061820 0%, #020808 60%, #030f0a 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+    overflow: hidden;
+  }
+  .greece-visual::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 60%;
+    background: linear-gradient(0deg, rgba(30,180,120,0.06) 0%, transparent 100%);
+  }
+  .greece-visual::after {
+    content: '';
+    position: absolute;
+    top: 30%; left: 20%;
+    width: 200px; height: 200px;
+    background: radial-gradient(ellipse, rgba(201,169,110,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .greece-horizon {
+    position: absolute;
+    bottom: 35%;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,169,110,0.2) 30%, rgba(30,180,120,0.2) 70%, transparent);
+  }
+  .greece-water-lines {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 35%;
+    overflow: hidden;
+  }
+  .water-line {
+    height: 1px;
+    background: rgba(30,180,120,0.06);
+    margin-bottom: 14px;
+    animation: waterMove 4s ease-in-out infinite;
+  }
+  .water-line:nth-child(2) { animation-delay: 0.6s; opacity: 0.7; width: 85%; margin-left: 8%; }
+  .water-line:nth-child(3) { animation-delay: 1.2s; opacity: 0.5; width: 92%; margin-left: 4%; }
+  .water-line:nth-child(4) { animation-delay: 1.8s; opacity: 0.6; width: 78%; margin-left: 12%; }
+  .water-line:nth-child(5) { animation-delay: 2.4s; opacity: 0.4; width: 95%; margin-left: 2%; }
+  @keyframes waterMove {
+    0%, 100% { transform: scaleX(1) translateX(0); }
+    50% { transform: scaleX(0.96) translateX(8px); }
+  }
+  .greece-scene-label {
+    position: relative; z-index: 2;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(30,180,120,0.6);
+  }
+  .greece-info { padding: 48px 44px; display: flex; flex-direction: column; justify-content: center; }
+  .greece-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(201,169,110,0.7);
+    display: block;
+    margin-bottom: 14px;
+  }
+  .greece-h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 44px;
+    line-height: 0.95;
+    letter-spacing: 0.04em;
+    color: var(--warm-white);
+    margin-bottom: 16px;
+  }
+  .greece-h3 em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: rgba(201,169,110,0.85);
+  }
+  .greece-body {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--soft-gray);
+    margin-bottom: 24px;
+  }
+  .greece-shots {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .greece-shot {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+  .greece-shot::before {
+    content: '';
+    width: 20px; height: 1px;
+    background: rgba(201,169,110,0.3);
+    flex-shrink: 0;
+  }
+
+  /* PRODUCTION STYLE */
+  .production-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+  .production-col {
+    background: var(--graphite);
+    padding: 40px 32px;
+    border: 1px solid rgba(255,255,255,0.04);
+    position: relative;
+    transition: background 0.3s var(--ease);
+  }
+  .production-col:hover { background: #0d0012; }
+  .production-col-accent {
+    width: 100%;
+    height: 3px;
+    margin-bottom: 28px;
+  }
+  .production-col:nth-child(1) .production-col-accent {
+    background: linear-gradient(90deg, rgba(160,100,220,0.7) 0%, transparent 100%);
+  }
+  .production-col:nth-child(2) .production-col-accent {
+    background: linear-gradient(90deg, rgba(201,169,110,0.7) 0%, transparent 100%);
+  }
+  .production-col:nth-child(3) .production-col-accent {
+    background: linear-gradient(90deg, rgba(30,180,120,0.7) 0%, transparent 100%);
+  }
+  .production-col-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.08em;
+    color: var(--warm-white);
+    margin-bottom: 20px;
+  }
+  .production-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .production-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.55;
+    color: var(--soft-gray);
+  }
+  .production-list li::before {
+    content: '';
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .production-col:nth-child(1) .production-list li::before { background: rgba(160,100,220,0.7); }
+  .production-col:nth-child(2) .production-list li::before { background: var(--gold); }
+  .production-col:nth-child(3) .production-list li::before { background: rgba(30,180,120,0.7); }
+
+  /* DELIVERABLES */
+  .deliverables-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 48px;
+  }
+  .deliverables-block {
+    background: var(--graphite);
+    padding: 44px 40px;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .deliverables-block-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 14px;
+  }
+  .deliverables-block-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.06em;
+    color: var(--warm-white);
+    margin-bottom: 24px;
+  }
+  .deliverables-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .deliverables-list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .deliverables-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .deliverables-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: rgba(201,169,110,0.4);
+    min-width: 24px;
+  }
+
+  /* EDITORIAL DIVIDER */
+  .vision-divider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  .vision-divider .line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+  .vision-divider .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.18);
+    white-space: nowrap;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .vision-wrap { padding: 0 28px 100px; }
+    .vision-hero { padding: 140px 28px 60px; }
+    .objective-grid,
+    .env-grid,
+    .production-cols,
+    .tech-grid { grid-template-columns: 1fr 1fr; }
+    .deliverables-grid { grid-template-columns: 1fr; }
+    .theater-block { grid-template-columns: 1fr; padding: 48px 28px; }
+    .greece-block { grid-template-columns: 1fr; }
+    .vision-hero-badge { display: none; }
+    .vision-hero-line { display: none; }
+  }
+  @media (max-width: 600px) {
+    .objective-grid,
+    .env-grid,
+    .production-cols,
+    .tech-grid { grid-template-columns: 1fr; }
+    .palette-row { flex-wrap: wrap; }
+    .palette-swatch { min-width: calc(50% - 1px); }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">SF<span>UG</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#philosophy">Studio</a></li>
+    <li><a href="materials.html">Materials</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="studio.html">About</a></li>
+    <li><a href="vision.html" class="is-active">Vision</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book Consultation</a>
+  <div class="nav-mobile-toggle">Menu</div>
+</nav>
+
+<!-- HERO -->
+<header class="vision-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-noise"></div>
+  <div class="vision-hero-line"></div>
+  <div class="vision-hero-year">Cinematic Brand Direction</div>
+  <div class="vision-hero-badge">
+    <div class="vision-hero-badge-ring">
+      <div class="vision-hero-badge-inner">SF<br>UG</div>
+    </div>
+  </div>
+  <div class="vision-hero-content">
+    <p class="hero-tag">Creative Direction &nbsp;—&nbsp; Production Brief</p>
+    <h1 class="hero-h1">Client<br><em>Vision.</em></h1>
+    <p class="hero-sub">A cinematic production framework — defining the visual language, commercial environments, and luxury aesthetic for SF Upholstery Group's brand story.</p>
+  </div>
+</header>
+
+<div class="vision-wrap">
+
+  <!-- 01 CORE OBJECTIVE -->
+  <section class="vision-section">
+    <span class="vision-section-num">01 — Core Objective</span>
+    <h2 class="vision-section-h2 purple">Showcase <em>Capability</em><br>& Luxury Positioning.</h2>
+    <p class="vision-prose">Create cinematic visuals that demonstrate what SF Upholstery Group is capable of across high-end commercial environments — where craft, scale, and atmosphere converge.</p>
+
+    <div class="objective-grid">
+      <div class="objective-card reveal">
+        <span class="objective-card-num">Focus — 01</span>
+        <div class="objective-card-title">Luxury Craftsmanship</div>
+        <p class="objective-card-body">Every frame communicates obsessive attention to material and finish. Stitching, texture, and surface detail rendered cinematically.</p>
+      </div>
+      <div class="objective-card reveal reveal-delay-1">
+        <span class="objective-card-num">Focus — 02</span>
+        <div class="objective-card-title">Commercial-Scale Work</div>
+        <p class="objective-card-body">Demonstrating capacity for large hospitality and institutional installations — not bespoke one-offs, but full environments.</p>
+      </div>
+      <div class="objective-card reveal reveal-delay-2">
+        <span class="objective-card-num">Focus — 03</span>
+        <div class="objective-card-title">Premium Hospitality Aesthetics</div>
+        <p class="objective-card-body">Luxury dining, VIP lounge, and five-star lobby environments as the visual context for SFUG's work.</p>
+      </div>
+      <div class="objective-card reveal reveal-delay-1">
+        <span class="objective-card-num">Focus — 04</span>
+        <div class="objective-card-title">Custom Fabrics & Finishes</div>
+        <p class="objective-card-body">Bespoke material stories — velvet, leather, curtain-grade fabric — shot in macro with cinematic lighting to communicate exclusivity.</p>
+      </div>
+      <div class="objective-card reveal reveal-delay-2">
+        <span class="objective-card-num">Focus — 05</span>
+        <div class="objective-card-title">Fire-Retardant & Theater-Grade</div>
+        <p class="objective-card-body">Technical authority positioned as a luxury differentiator. Commercial-grade safety meets premium visual design.</p>
+      </div>
+      <div class="objective-card reveal reveal-delay-3">
+        <span class="objective-card-num">Focus — 06</span>
+        <div class="objective-card-title">Cinematic Atmosphere</div>
+        <p class="objective-card-body">Upscale lifestyle visuals that position SFUG inside a world of considered luxury — not just a vendor, but a creative partner.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="vision-divider"><div class="line"></div><span class="label">Brand Aesthetic</span><div class="line"></div></div>
+
+  <!-- 02 BRAND AESTHETIC -->
+  <section class="vision-section">
+    <span class="vision-section-num">02 — Brand Aesthetic Direction</span>
+    <h2 class="vision-section-h2">Color <em>Palette</em><br>& Visual Language.</h2>
+    <p class="vision-prose">The visual palette draws from moody luxury environments — depth, warmth, and atmospheric vibrancy grounded in a dark foundation.</p>
+
+    <div class="palette-row reveal">
+      <div class="palette-swatch swatch-purple">
+        <span class="swatch-label">Primary</span>
+        <span class="swatch-name">Deep Purple</span>
+      </div>
+      <div class="palette-swatch swatch-emerald">
+        <span class="swatch-label">Primary</span>
+        <span class="swatch-name">Emerald Green</span>
+      </div>
+      <div class="palette-swatch swatch-navy">
+        <span class="swatch-label">Primary</span>
+        <span class="swatch-name">Dark Blue</span>
+      </div>
+      <div class="palette-swatch swatch-black">
+        <span class="swatch-label">Foundation</span>
+        <span class="swatch-name">Black Accent</span>
+      </div>
+      <div class="palette-swatch swatch-gold">
+        <span class="swatch-label">Ambient</span>
+        <span class="swatch-name">Warm Gold</span>
+      </div>
+    </div>
+
+    <div class="style-tags reveal reveal-delay-1">
+      <span class="style-tag">Vibrant Nightclub Lighting</span>
+      <span class="style-tag emerald">Cinematic Camera Movement</span>
+      <span class="style-tag">Moody Luxury Environments</span>
+      <span class="style-tag emerald">High-End Hospitality</span>
+      <span class="style-tag gold">Premium Textures</span>
+      <span class="style-tag">Fabric Close-Ups</span>
+      <span class="style-tag gold">Modern Upscale Interiors</span>
+      <span class="style-tag">Slow Motion</span>
+      <span class="style-tag emerald">Macro Detail Shots</span>
+    </div>
+  </section>
+
+  <div class="vision-divider"><div class="line"></div><span class="label">Commercial Environments</span><div class="line"></div></div>
+
+  <!-- 03 COMMERCIAL ENVIRONMENTS -->
+  <section class="vision-section">
+    <span class="vision-section-num">03 — Commercial Environment Scenes</span>
+    <h2 class="vision-section-h2 emerald">Three <em>Worlds.</em><br>One Craft.</h2>
+    <p class="vision-prose">Each commercial environment presents a distinct visual language — unified by premium upholstery and luxury atmosphere.</p>
+
+    <div class="env-grid">
+      <div class="env-card env-restaurant reveal">
+        <span class="env-card-letter">A</span>
+        <div class="env-card-body">
+          <span class="env-card-tag">Scene A — Restaurants</span>
+          <div class="env-card-title">Upscale Dining &<br>Luxury Booth Seating</div>
+          <p class="env-card-desc">Ambient lighting, elegant fabric textures, and high-end dining atmosphere. Guests in luxury settings, moody lighting reflections on upholstery surfaces.</p>
+          <ul class="env-shot-list">
+            <li>Close-ups of stitching & material</li>
+            <li>Guests dining in luxury settings</li>
+            <li>Slow camera pans across seating</li>
+            <li>Moody lighting reflections</li>
+          </ul>
+        </div>
+      </div>
+      <div class="env-card env-bar reveal reveal-delay-1">
+        <span class="env-card-letter">B</span>
+        <div class="env-card-body">
+          <span class="env-card-tag">Scene B — Bars & Nightclubs</span>
+          <div class="env-card-title">VIP Lounge &<br>Nightlife Upholstery</div>
+          <p class="env-card-desc">Vibrant LED environments. Purple and green nightclub lighting over leather and velvet. Champagne service, crowd silhouettes, slow-motion nightlife.</p>
+          <ul class="env-shot-list">
+            <li>Purple/green nightclub lighting</li>
+            <li>Leather & velvet texture close-ups</li>
+            <li>Champagne service scenes</li>
+            <li>Slow-motion nightlife</li>
+            <li>Reflections on furniture surfaces</li>
+          </ul>
+        </div>
+      </div>
+      <div class="env-card env-hotel reveal reveal-delay-2">
+        <span class="env-card-letter">C</span>
+        <div class="env-card-body">
+          <span class="env-card-tag">Scene C — Hotel Lobbies</span>
+          <div class="env-card-title">Luxury Hospitality &<br>Concierge Environments</div>
+          <p class="env-card-desc">Upscale Midtown-style interiors. Grand lighting fixtures, elegant lobby seating, guests and concierge interactions set against cinematic wide shots.</p>
+          <ul class="env-shot-list">
+            <li>Elegant lobby seating</li>
+            <li>Guests walking through lobby</li>
+            <li>Concierge interaction scenes</li>
+            <li>Grand lighting fixtures</li>
+            <li>Wide cinematic shots</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="vision-divider"><div class="line"></div><span class="label">Theater Showcase</span><div class="line"></div></div>
+
+  <!-- 04 THEATER -->
+  <section class="vision-section">
+    <span class="vision-section-num">04 — Theater & Curtain Showcase</span>
+    <h2 class="vision-section-h2 purple">Scale &<br><em>Drama.</em></h2>
+    <p class="vision-prose">Large commercial curtain installations that demonstrate the breadth of SFUG's capabilities — scale, weight, and elegance in a single frame.</p>
+
+    <div class="theater-block reveal">
+      <div class="theater-visual">
+        <div class="theater-curtain-left"></div>
+        <div class="theater-curtain-right"></div>
+        <div class="theater-spotlight"></div>
+        <div class="theater-stage-label">Stage</div>
+      </div>
+      <div class="theater-info">
+        <span class="theater-tag">Theater Curtain Sequence</span>
+        <h3 class="theater-h3">Massive Curtains.<br><em>Cinematic</em> Scale.</h3>
+        <p class="theater-body">Showcase large-format commercial curtain installations that no residential upholstery firm can match. Dramatic closing sequences, spotlight atmosphere, and velvet texture close-ups that communicate both scale and craft excellence.</p>
+        <div class="shot-pills">
+          <span class="shot-pill">Curtains slowly closing</span>
+          <span class="shot-pill">Luxury theater interiors</span>
+          <span class="shot-pill">Spotlight atmosphere</span>
+          <span class="shot-pill">Velvet texture close-ups</span>
+          <span class="shot-pill">Dramatic cinematic lighting</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="vision-divider"><div class="line"></div><span class="label">Technical</span><div class="line"></div></div>
+
+  <!-- 05 TECHNICAL -->
+  <section class="vision-section">
+    <span class="vision-section-num">05 — Technical & Material Demonstrations</span>
+    <h2 class="vision-section-h2 emerald">Fire-Retardant.<br><em>Visually</em> Stunning.</h2>
+    <p class="vision-prose">Position commercial-grade safety standards as a luxury differentiator — professionalism made visually cinematic through elegant technical overlays and material sequences.</p>
+
+    <div class="tech-grid">
+      <div class="tech-cell reveal">
+        <div class="tech-icon">FR</div>
+        <div class="tech-title">Fire Retardant Visuals</div>
+        <p class="tech-body">Fabric treatment sequences that communicate professional-grade safety standards through elegance — not industrial footage. The visual language of trust and compliance.</p>
+      </div>
+      <div class="tech-cell reveal reveal-delay-1">
+        <div class="tech-icon">◎</div>
+        <div class="tech-title">Slow-Motion Fabric Movement</div>
+        <p class="tech-body">High-speed capture of fabric in motion — the fall of curtain-weight velvet, the tension of a leather pull, the cascade of performance linen. Material poetry.</p>
+      </div>
+      <div class="tech-cell reveal reveal-delay-2">
+        <div class="tech-icon">≡</div>
+        <div class="tech-title">Technical Overlays</div>
+        <p class="tech-body">Elegant graphic overlays — thread counts, FR ratings, Wyzenbeek scores — presented with cinematic restraint. Authority without compromise to the aesthetic.</p>
+      </div>
+      <div class="tech-cell reveal reveal-delay-3">
+        <div class="tech-icon">✦</div>
+        <div class="tech-title">Craftsmanship Sequences</div>
+        <p class="tech-body">Detailed macro shots of hand-stitching, material testing, and finish application. The process elevated to the level of the finished piece.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="vision-divider"><div class="line"></div><span class="label">Lifestyle</span><div class="line"></div></div>
+
+  <!-- 06 GREECE -->
+  <section class="vision-section">
+    <span class="vision-section-num">06 — Lifestyle / Luxury Destination Scene</span>
+    <h2 class="vision-section-h2">Greece Island<br><em>Patio.</em></h2>
+    <p class="vision-prose">Luxury outdoor upholstery positioned against the most aspirational backdrop — ocean-facing patio furniture, golden-hour light, and the quiet confidence of a life well-furnished.</p>
+
+    <div class="greece-block reveal">
+      <div class="greece-visual">
+        <div class="greece-horizon"></div>
+        <div class="greece-water-lines">
+          <div class="water-line"></div>
+          <div class="water-line"></div>
+          <div class="water-line"></div>
+          <div class="water-line"></div>
+          <div class="water-line"></div>
+        </div>
+        <span class="greece-scene-label">Greece — Island Patio — Golden Hour</span>
+      </div>
+      <div class="greece-info">
+        <span class="greece-tag">Scene Description</span>
+        <h3 class="greece-h3">Outdoor Luxury.<br><em>Ocean Light.</em></h3>
+        <p class="greece-body">Luxury patio furniture overlooking the ocean. Greece island setting. Elegant, relaxed atmosphere — a person crossing their legs on a lounge chair while an ocean breeze moves the surrounding fabric.</p>
+        <div class="greece-shots">
+          <div class="greece-shot">Slow cinematic drone shots</div>
+          <div class="greece-shot">Bare feet crossing on lounge chair</div>
+          <div class="greece-shot">Wind moving curtains & fabric</div>
+          <div class="greece-shot">Ocean reflections</div>
+          <div class="greece-shot">Luxury outdoor upholstery close-ups</div>
+          <div class="greece-shot">Sunset — golden-hour lighting</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="vision-divider"><div class="line"></div><span class="label">Production Style</span><div class="line"></div></div>
+
+  <!-- 07 PRODUCTION STYLE -->
+  <section class="vision-section">
+    <span class="vision-section-num">07 — Overall Production Style</span>
+    <h2 class="vision-section-h2">Camera. <em>Light.</em><br>Texture.</h2>
+    <p class="vision-prose">Three pillars that define every frame — movement, atmosphere, and surface. Together they create a visual identity as precise as the craft it depicts.</p>
+
+    <div class="production-cols">
+      <div class="production-col reveal">
+        <div class="production-col-accent"></div>
+        <div class="production-col-title">Camera Direction</div>
+        <ul class="production-list">
+          <li>Smooth robotic camera movement</li>
+          <li>Slow motion throughout</li>
+          <li>Macro texture shots</li>
+          <li>Cinematic transitions</li>
+          <li>Wide luxury environment shots</li>
+        </ul>
+      </div>
+      <div class="production-col reveal reveal-delay-1">
+        <div class="production-col-accent"></div>
+        <div class="production-col-title">Lighting</div>
+        <ul class="production-list">
+          <li>Vibrant nightclub tones</li>
+          <li>Warm hospitality lighting</li>
+          <li>Ocean sunset & golden hour</li>
+          <li>Moody cinematic shadows</li>
+          <li>Spotlight theatrical atmosphere</li>
+        </ul>
+      </div>
+      <div class="production-col reveal reveal-delay-2">
+        <div class="production-col-accent"></div>
+        <div class="production-col-title">Texture Focus</div>
+        <ul class="production-list">
+          <li>Velvet</li>
+          <li>Full-grain leather</li>
+          <li>Hand stitching details</li>
+          <li>Curtain-weight materials</li>
+          <li>Outdoor performance fabrics</li>
+          <li>Luxury upholstery materials</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="vision-divider"><div class="line"></div><span class="label">Deliverables</span><div class="line"></div></div>
+
+  <!-- 08 DELIVERABLES -->
+  <section class="vision-section">
+    <span class="vision-section-num">08 — Deliverables</span>
+    <h2 class="vision-section-h2">Production<br><em>Scope.</em></h2>
+    <p class="vision-prose">The complete deliverable package — from cinematic brand reels to short-form social assets, each piece purpose-built for luxury positioning.</p>
+
+    <div class="deliverables-grid">
+      <div class="deliverables-block reveal">
+        <span class="deliverables-block-tag">Video Concepts</span>
+        <div class="deliverables-block-title">Cinematic Reels</div>
+        <ul class="deliverables-list">
+          <li><span class="deliverables-num">01</span> Restaurant cinematic reel</li>
+          <li><span class="deliverables-num">02</span> Nightclub luxury reel</li>
+          <li><span class="deliverables-num">03</span> Hotel lobby showcase</li>
+          <li><span class="deliverables-num">04</span> Theater curtain showcase</li>
+          <li><span class="deliverables-num">05</span> Greece luxury patio lifestyle reel</li>
+        </ul>
+      </div>
+      <div class="deliverables-block reveal reveal-delay-1">
+        <span class="deliverables-block-tag">Visual Assets</span>
+        <div class="deliverables-block-title">Brand Content</div>
+        <ul class="deliverables-list">
+          <li><span class="deliverables-num">01</span> Short-form social clips</li>
+          <li><span class="deliverables-num">02</span> Cinematic brand trailer</li>
+          <li><span class="deliverables-num">03</span> Material close-up sequences</li>
+          <li><span class="deliverables-num">04</span> Commercial portfolio visuals</li>
+          <li><span class="deliverables-num">05</span> Luxury hospitality montage</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding: 80px 0 0; border-top: 1px solid rgba(201,169,110,0.08);">
+    <div style="text-align:center; position:relative;">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%, rgba(160,100,220,0.08) 0%, transparent 60%);pointer-events:none;"></div>
+      <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(160,100,220,0.7);display:block;margin-bottom:18px;position:relative;">Begin Production</span>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,88px);line-height:0.95;letter-spacing:0.04em;color:var(--warm-white);margin-bottom:20px;position:relative;">Ready to <em style="font-family:'DM Serif Display',serif;font-style:italic;color:rgba(160,100,220,0.85);">Begin.</em></h2>
+      <p style="font-size:15px;font-weight:300;line-height:1.7;color:var(--soft-gray);max-width:480px;margin:0 auto 36px;position:relative;">This vision is ready to be executed. Let's build the cinematic brand story that SF Upholstery Group deserves.</p>
+      <div style="display:flex;gap:16px;justify-content:center;position:relative;">
+        <a href="contact.html" class="btn-large">Book Consultation</a>
+        <a href="work.html" class="btn-outline-large">View Current Work</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="footer-logo">San Francisco<br><span>Upholstery Group</span></span>
+      <p class="footer-tagline">Precision-crafted restoration and bespoke upholstery. Engineered with obsessive detail since 1989.</p>
+    </div>
+    <div>
+      <div class="footer-col-title-row">
+        <span class="footer-title-icon" aria-hidden="true"></span>
+        <span class="footer-col-title" style="margin-bottom:0">Services</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="services.html#furniture">Furniture Restoration</a></li>
+        <li><a href="services.html#custom">Custom Upholstery</a></li>
+        <li><a href="services.html#automotive">Automotive Interior</a></li>
+        <li><a href="services.html#commercial">Commercial Projects</a></li>
+        <li><a href="services.html#consultation">Material Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Studio</span>
+      <ul class="footer-links">
+        <li><a href="about-team.html">About the Team</a></li>
+        <li><a href="process.html">Our Process</a></li>
+        <li><a href="materials.html">Material Library</a></li>
+        <li><a href="work.html">Project Archive</a></li>
+        <li><a href="press.html">Press</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Contact</span>
+      <ul class="footer-links">
+        <li><a href="contact.html">Hayes Valley Studio</a></li>
+        <li><a href="tel:+14155550100">(415) 555-0100</a></li>
+        <li><a href="mailto:studio@sfupholstery.com">studio@sfupholstery.com</a></li>
+        <li><a href="contact.html">Book a Visit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">(c) 2026 San Francisco Upholstery Group &nbsp;-&nbsp; All rights reserved</span>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">Houzz</a>
+      <a href="#">Pinterest</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+
+<div id="avatarWidgetOverlay" class="avatar-widget-overlay">
+  <section class="avatar-widget" role="dialog" aria-modal="true" aria-label="AI Avatar Agent">
+    <header class="avatar-head">
+      <div class="avatar-id">
+        <div class="avatar-badge">AI</div>
+        <div class="avatar-meta">
+          <div class="avatar-name">Lamar's Ai Avatar</div>
+          <div class="avatar-status"><span class="status-dot"></span><span id="avatarStatusText">Online</span></div>
+        </div>
+      </div>
+      <div class="avatar-controls">
+        <button id="avatarMinBtn" aria-label="Minimize">-</button>
+        <button id="avatarCloseBtn" aria-label="Close">x</button>
+      </div>
+    </header>
+    <div class="avatar-stage">
+      <video id="avatarVideo" autoplay muted playsinline poster="assets/ai-avatar.png"></video>
+      <div id="avatarFacePulse" class="avatar-face-pulse"></div>
+    </div>
+    <div class="avatar-warning">
+      <strong>!</strong> This AI can improvise. Review important decisions before acting.
+    </div>
+    <div class="avatar-interact">
+      <div class="avatar-step">Step 1: Enable your microphone or camera</div>
+      <div class="avatar-actions">
+        <button id="avatarMicBtn" class="avatar-btn">Enable Mic</button>
+        <button id="avatarCamBtn" class="avatar-btn">Enable Cam</button>
+      </div>
+    </div>
+    <div class="avatar-chat">
+      <div id="avatarMessages" class="avatar-messages"></div>
+      <div class="avatar-input-row">
+        <input id="avatarInput" class="avatar-input" type="text" placeholder="Type a message to your AI avatar...">
+        <button id="avatarSend" class="avatar-send">Send</button>
+      </div>
+    </div>
+  </section>
+</div>
+<button id="openAvatarWidget" class="avatar-fab">AI Concierge</button>
+<script src="js/avatar-agent.js"></script>
+</body>
+</html>
