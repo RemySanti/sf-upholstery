@@ -30,6 +30,25 @@
     });
   }
 
+  /* UX journey: progress bar */
+  const progressTrack = document.createElement("div");
+  progressTrack.id = "pageProgressTrack";
+  const progressBar = document.createElement("div");
+  progressBar.id = "pageProgressBar";
+  progressTrack.appendChild(progressBar);
+  document.body.appendChild(progressTrack);
+
+  function updateProgress() {
+    const doc = document.documentElement;
+    const scrollTop = window.scrollY || doc.scrollTop || 0;
+    const max = Math.max(doc.scrollHeight - window.innerHeight, 1);
+    const pct = Math.min(100, Math.max(0, (scrollTop / max) * 100));
+    progressBar.style.width = pct + "%";
+  }
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+
   const mobileToggle = nav ? nav.querySelector(".nav-mobile-toggle") : null;
   const desktopLinks = nav ? nav.querySelector(".nav-links") : null;
   const desktopCta = nav ? nav.querySelector(".nav-cta") : null;
@@ -111,19 +130,93 @@
     });
   }
 
+  /* Framer-style fly-in motion system (vanilla) */
+  const motionSelectors = [
+    ".bento-cell",
+    ".bento-material-cell",
+    ".bento-project-cell",
+    ".service-card",
+    ".material-tier",
+    ".project-row",
+    ".contact-block",
+    ".timeline-deep-item",
+    ".page-section",
+    ".vision-section",
+    ".vision-divider",
+  ];
+  const motionPattern = ["up", "left", "right", "up", "pop"];
+  let motionIndex = 0;
+
+  motionSelectors.forEach(function (selector) {
+    const nodes = document.querySelectorAll(selector);
+    nodes.forEach(function (node) {
+      if (!node.classList.contains("motion-fly")) {
+        node.classList.add("reveal", "motion-fly");
+        if (!node.dataset.fly) {
+          node.dataset.fly = motionPattern[motionIndex % motionPattern.length];
+        }
+        motionIndex += 1;
+      }
+    });
+  });
+
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length) {
     const observer = new IntersectionObserver(
       function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) e.target.classList.add("visible");
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
     );
     reveals.forEach(function (el) {
       observer.observe(el);
     });
+  }
+
+  /* GSAP ScrollTrigger pinned horizontal carousel (process section) */
+  if (window.gsap && window.ScrollTrigger) {
+    window.gsap.registerPlugin(window.ScrollTrigger);
+    if (typeof window.ScrollTrigger.normalizeScroll === "function") {
+      window.ScrollTrigger.normalizeScroll(true);
+    }
+
+    const carouselSection = document.querySelector(".process-carousel-section");
+    const carouselTrack = document.querySelector(".process-carousel-track");
+
+    if (carouselSection && carouselTrack) {
+      const getDistance = function () {
+        return Math.max(0, carouselTrack.scrollWidth - window.innerWidth);
+      };
+
+      const setupHorizontalPin = function () {
+        const distance = getDistance();
+        if (distance <= 0) return;
+
+        window.gsap.to(carouselTrack, {
+          x: function () {
+            return -getDistance();
+          },
+          ease: "none",
+          scrollTrigger: {
+            trigger: carouselSection,
+            start: "top top",
+            end: function () {
+              return "+=" + getDistance();
+            },
+            pin: true,
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
+        });
+      };
+
+      setupHorizontalPin();
+    }
   }
 
   const track = document.getElementById("materialTrack");
