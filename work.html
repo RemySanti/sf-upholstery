@@ -9,6 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/avatar-widget.css">
+<link rel="stylesheet" href="css/vision-theme.css">
+<link rel="stylesheet" href="css/bento-glass.css">
+<link rel="stylesheet" href="css/spacing-fix.css">
 </head>
 <body>
 
@@ -23,12 +26,13 @@
     <li><a href="process.html">Process</a></li>
     <li><a href="work.html" class="is-active">Work</a></li>
     <li><a href="studio.html">About</a></li>
+    <li><a href="vision.html">Vision</a></li>
   </ul>
   <a href="contact.html" class="nav-cta">Book Consultation</a>
   <div class="nav-mobile-toggle">Menu</div>
 </nav>
 
-<header class="page-hero">
+<header class="page-hero work-hero">
   <div class="hero-bg"></div>
   <div class="hero-noise"></div>
   <div class="hero-line"></div>
@@ -51,14 +55,37 @@
   </aside>
 
 <main class="page-main">
-  <section class="page-section" style="padding-top:20px">
-    <span class="section-kicker reveal">Portfolio</span>
-    <h2 class="section-title-page reveal reveal-delay-1">Work that reads as <em>collectible.</em></h2>
-    <p class="prose reveal reveal-delay-2" style="max-width:640px;margin-top:16px">Featured projects from 2020-2026. Full case files, including strip-down photography and material memos, are available to prospective clients under NDA during consultation.</p>
+  <section class="page-section work-intro-luxe reveal" style="padding-top:20px">
+    <div class="work-intro-grid">
+      <div class="work-intro-copy">
+        <span class="section-kicker reveal">Portfolio</span>
+        <h2 class="section-title-page reveal reveal-delay-1">Work that reads as <em>collectible.</em></h2>
+        <p class="prose reveal reveal-delay-2">Featured projects from 2020-2026. Full case files, including strip-down photography and material memos, are available to prospective clients under NDA during consultation.</p>
+        <div class="work-intro-tags reveal reveal-delay-2">
+          <span class="work-intro-tag">Frame diagnostics</span>
+          <span class="work-intro-tag">Material memos</span>
+          <span class="work-intro-tag">Install sequencing</span>
+        </div>
+      </div>
+      <aside class="work-intro-meta reveal reveal-delay-3" aria-label="Project Archive Summary">
+        <div class="work-meta-item">
+          <span class="work-meta-label">Featured Projects</span>
+          <span class="work-meta-value">06</span>
+        </div>
+        <div class="work-meta-item">
+          <span class="work-meta-label">Coverage</span>
+          <span class="work-meta-value">Residential · Hospitality · Automotive</span>
+        </div>
+        <a href="contact.html" class="btn-outline-large work-intro-cta">Request full case files</a>
+      </aside>
+    </div>
 
     <div class="project-list">
       <article class="project-row reveal">
-        <div class="project-row-visual">
+        <div class="project-row-visual has-video">
+          <video class="bento-card-video" autoplay muted loop playsinline preload="none">
+            <source data-src="assets/edwardian-club-chair-web.mp4" type="video/mp4">
+          </video>
           <div class="project-bg project-bg-1"></div>
           <div class="project-overlay"></div>
         </div>
@@ -69,7 +96,10 @@
         </div>
       </article>
       <article class="project-row reveal reveal-delay-1">
-        <div class="project-row-visual">
+        <div class="project-row-visual has-video">
+          <video class="bento-card-video" autoplay muted loop playsinline preload="none">
+            <source data-src="assets/pacific-heights-hotel-lounge-web.mp4" type="video/mp4">
+          </video>
           <div class="project-bg project-bg-2"></div>
           <div class="project-overlay"></div>
         </div>
@@ -80,7 +110,10 @@
         </div>
       </article>
       <article class="project-row reveal reveal-delay-2">
-        <div class="project-row-visual">
+        <div class="project-row-visual has-video">
+          <video class="bento-card-video" autoplay muted loop playsinline preload="none">
+            <source data-src="assets/noe-valley-sectional-web.mp4" type="video/mp4">
+          </video>
           <div class="project-bg project-bg-3"></div>
           <div class="project-overlay"></div>
         </div>
@@ -91,7 +124,10 @@
         </div>
       </article>
       <article class="project-row reveal reveal-delay-3">
-        <div class="project-row-visual">
+        <div class="project-row-visual has-video">
+          <video class="bento-card-video" autoplay muted loop playsinline preload="none">
+            <source data-src="assets/mercedes-280se-web.mp4" type="video/mp4">
+          </video>
           <div class="project-bg project-bg-4"></div>
           <div class="project-overlay"></div>
         </div>
@@ -102,7 +138,10 @@
         </div>
       </article>
       <article class="project-row reveal reveal-delay-4">
-        <div class="project-row-visual">
+        <div class="project-row-visual has-video">
+          <video class="bento-card-video" autoplay muted loop playsinline preload="none">
+            <source data-src="assets/pierre-jeanneret-homage-web.mp4" type="video/mp4">
+          </video>
           <div class="project-bg project-bg-1"></div>
           <div class="project-overlay"></div>
         </div>
@@ -113,7 +152,10 @@
         </div>
       </article>
       <article class="project-row reveal reveal-delay-5">
-        <div class="project-row-visual">
+        <div class="project-row-visual has-video">
+          <video class="bento-card-video" autoplay muted loop playsinline preload="none">
+            <source data-src="assets/presidio-heights-dining-web.mp4" type="video/mp4">
+          </video>
           <div class="project-bg project-bg-2"></div>
           <div class="project-overlay"></div>
         </div>
